@@ -1,37 +1,58 @@
-# 🦀 Rust Project Starter Kit
+# Automate - Simple Git Command Line Tool
 
-Welcome to the Rust Project Starter Kit! 🎉 This repository contains starter code for a Rust project, following best practices. It simplifies the process of setting up a new project from scratch, allowing you to focus on building your application's core functionality.
+## Overview
 
-<!-- In this setup, we use the `User` entity as an example, but you can easily replicate and add new entities as required for your specific project needs. -->
+A simple command line tool written in Rust. It automates the process of adding all files, committing changes, and pushing them to the remote repository. This tool is designed to streamline the Git workflow, making it faster and more convenient.
 
-## 🌟 Current Features
+## Usage
 
-- 🍃 MongoDB support for database operations
+To use `automate`, follow these steps:
 
-## 🚀 Planned Features
+1. Navigate to the root directory of your Git repository in the terminal.
 
-- ✅ Complete CRUD (Create, Read, Update, Delete) operations
-- 🗄️ Additional database support:
-  - 🌊 SurrealDB
-  - 🐘 PostgreSQL
-  - 🗃️ SQL databases
-- 🔐 Authentication system
-- 🐳 Docker support for easy deployment
+2. Run the following command:
 
-## 🤝 Contributing
+```bash
+automate
+```
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+This command will execute the tool and perform the following operations:
 
-## 📝 TODO
+1. Add all files recursively to the Git repository.
+2. Commit all changes with a randomly generated commit message.
+3. Push the changes to the remote repository (origin main branch).
 
-- [ ] Implement CRUD operations for User entity
-- [ ] Add SurrealDB support
-- [ ] Add PostgreSQL support
-- [ ] Add SQL database support
-- [ ] Implement authentication system
-- [ ] Add Docker support
-- [ ] Implement event tracking
+## Installation
+1. Clone the repository:
 
-## 📄 License
+```bash
+git clone <url>
+```
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+2. Navigate to the project directory:
+
+```bash
+cd automate
+```
+
+3. Build the project using Cargo:
+
+```bash
+cargo build --release
+```
+
+4. Install the binary:
+
+```bash
+cargo install --path .
+```
+
+## Dependencies
+
+- `names`: This dependency is used to generate random commit messages. You can find more information about this crate [here](https://crates.io/crates/names).
+
+- `std::os`: This module is part of the Rust standard library and is used for interacting with the operating system. It is used in this project for handling process exit codes.
+
+## License
+
+This project is released under the MIT License - see the [LICENSE](LICENSE) file for details.
